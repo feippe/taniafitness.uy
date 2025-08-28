@@ -1,5 +1,4 @@
 RewriteEngine On
-RewriteRule ^(inicio)?$ /index.html [L]
 RewriteRule ^contacto$ /contacto.html [L]
 RewriteRule ^sobre-mi$ /sobre-mi.html [L]
 RewriteRule ^servicios/plan-premium-online$ /servicios/plan-premium-online.html [L]

@@ -6036,3 +6036,6 @@ table.shop-cart .actions .update-cart {
     color: #CB5F97;
     text-decoration: underline;
 }
+.tp-rightarrow.tparrows.metis, .tp-leftarrow.tparrows.metis {
+    display: none;
+}
