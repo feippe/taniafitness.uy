@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteRule ^(inicio)?$ /index.html [L]
+RewriteRule ^contacto$ /contacto.html [L]
+RewriteRule ^sobre-mi$ /sobre-mi.html [L]
+RewriteRule ^servicios/plan-premium-online$ /servicios/plan-premium-online.html [L]
+RewriteRule ^servicios/plan-standard-online$ /servicios/plan-standard-online.html [L]
+RewriteRule ^servicios/plan-mini-gym$ /servicios/plan-mini-gym.html [L]
+RewriteRule ^(.+\.jpe?g)$ /$1 [L]
