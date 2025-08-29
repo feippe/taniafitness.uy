@@ -614,5 +614,7 @@ async function getTemplateFromFile(file) {
 
 function menuSelected(){
 	document.querySelector(`#li-${menuSelectedName}`).classList.add("active");
-	loadEventsMenu();
+	setTimeout(function(){
+		loadEventsMenu();
+	},500);
 }
