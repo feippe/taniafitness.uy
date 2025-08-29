@@ -559,7 +559,7 @@ function RevolutionInit2() {
 ===================================================================*/
 
 function loadHeaderFooter(){
-	renderWithTemplate('menuslideout',document.querySelector('#menuslideout'), loadEventsMenu);
+	renderWithTemplate('menuslideout',document.querySelector('#menuslideout'));
 	renderWithTemplate('header',document.querySelector('#topheader'), menuSelected);
 	renderWithTemplate('footer',document.querySelector('#footer'), loadBackToTop);
 }
@@ -614,4 +614,5 @@ async function getTemplateFromFile(file) {
 
 function menuSelected(){
 	document.querySelector(`#li-${menuSelectedName}`).classList.add("active");
+	loadEventsMenu();
 }
