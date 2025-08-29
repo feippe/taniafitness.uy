@@ -79,7 +79,7 @@ function cargarDatosDelPlan() {
             document.getElementById('product-description').innerHTML = plan.descripcion;
         }
     }else{
-        window.location.href = "./servicios";
+        window.location.href = "/servicios";
     }
 }
 
