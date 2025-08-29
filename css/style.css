@@ -1168,29 +1168,47 @@ header.header-4 nav.menu {
 header.header-1 nav.menu .main-menu > li > a,
 header.header-2 nav.menu .main-menu > li > a,
 header.header-3 nav.menu .main-menu > li > a,
-header.header-4 nav.menu .main-menu > li > a {
+header.header-4 nav.menu .main-menu > li > a,
+header.header-1 nav.menu .main-menu > li > span,
+header.header-2 nav.menu .main-menu > li > span,
+header.header-3 nav.menu .main-menu > li > span,
+header.header-4 nav.menu .main-menu > li > span {
     text-transform: uppercase;
 	padding: 60px 20px;
 }
 header.header-1.scrolling-menu nav.menu .main-menu > li > a, 
 header.header-2.scrolling-menu nav.menu .main-menu > li > a, 
 header.header-3.scrolling-menu nav.menu .main-menu > li > a, 
-header.header-4.scrolling-menu nav.menu .main-menu > li > a {
+header.header-4.scrolling-menu nav.menu .main-menu > li > a,
+header.header-1.scrolling-menu nav.menu .main-menu > li > span, 
+header.header-2.scrolling-menu nav.menu .main-menu > li > span, 
+header.header-3.scrolling-menu nav.menu .main-menu > li > span, 
+header.header-4.scrolling-menu nav.menu .main-menu > li > span {
     padding: 35px 20px;
 }
 header.header-3 nav.menu .main-menu > li > a,
-header.header-4 nav.menu .main-menu > li > a {
+header.header-4 nav.menu .main-menu > li > a,
+header.header-4 nav.menu .main-menu > li > span {
     color: #fff;
+    cursor: pointer;
 }
 .menu .main-menu li a:hover,
 .menu .main-menu li.active > a,
 header.header-3 nav.menu .main-menu > li > a:hover,
 header.header-3 nav.menu .main-menu > li.active > a,
 header.header-4 nav.menu .main-menu > li > a:hover,
-header.header-4 nav.menu .main-menu > li.active > a {
+header.header-4 nav.menu .main-menu > li.active > a,
+.menu .main-menu li span:hover,
+.menu .main-menu li.active > span,
+header.header-3 nav.menu .main-menu > li > span:hover,
+header.header-3 nav.menu .main-menu > li.active > span,
+header.header-4 nav.menu .main-menu > li > span:hover,
+header.header-4 nav.menu .main-menu > li.active > span
+{
     color: rgb(203, 95, 151);
 }
-.menu .main-menu > li.dropdown > a:after {
+.menu .main-menu > li.dropdown > a:after,
+.menu .main-menu > li.dropdown > span:after {
     content: '\f3d0';
     margin-left: 10px;
     font-size: 12px;
@@ -1379,14 +1397,17 @@ header.header-4.scrolling-menu #logo {
 .mobile-menu > ul.menu li.expand {
     background-color: #ddd;
 }
-.mobile-menu > ul.menu li a {
+.mobile-menu > ul.menu li a,
+.mobile-menu > ul.menu li span {
     display: block;
     color: #5e5a54;
     padding: 10px 20px;
     background: inherit;
 }
 .mobile-menu > ul.menu li a:hover,
-.mobile-menu > ul.menu li.expand > a {
+.mobile-menu > ul.menu li.expand > a,
+.mobile-menu > ul.menu li span:hover,
+.mobile-menu > ul.menu li.expand > span {
     color: rgb(203, 95, 151);
 }
 .mobile-menu>ul.menu li .sub-menu-toggle {
@@ -1517,7 +1538,7 @@ header.header-4.scrolling-menu #logo {
 	background-color: #7fca90;
 }
 .section-bg-10 {
-	background-image:url(../images/background/bg_1920x470.jpg);
+	background-image:url(../images/gallery/header-about-me.jpeg);
 	background-position: center bottom;
 	background-repeat: no-repeat;
 	background-color: #7fca90;
