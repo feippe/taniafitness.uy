@@ -12,8 +12,8 @@ let planes = [
             <i class="fa-regular fa-circle-check"></i> Grupo de Whatsapp<br/>
             <i class="fa-regular fa-circle-check"></i> Chequeo mensual
         `,
-        imagen: "./images/gallery/pso-400x400.jpeg",
-        link: "./servicios/plan-standard-online",
+        imagen: "/images/gallery/pso-400x400.jpeg",
+        link: "/servicios/plan-standard-online",
         estrellas: 80
     },
     {
@@ -33,8 +33,8 @@ let planes = [
             <i class="fa-regular fa-circle-check"></i> Videollamada x dudas y asesoramiento<br/>
             <i class="fa-regular fa-circle-check"></i> 15% Off en siguiente plan online
         `,
-        imagen: "./images/gallery/ppo-400x400.jpeg",
-        link: "./servicios/plan-premium-online",
+        imagen: "/images/gallery/ppo-400x400.jpeg",
+        link: "/servicios/plan-premium-online",
         estrellas: 100
     },
     {
@@ -52,8 +52,8 @@ let planes = [
             <i class="fa-regular fa-circle-check"></i> Comunidad de mujeres<br/>
             <i class="fa-regular fa-circle-check"></i> 🔥 Primera clase GRATIS
         `,
-        imagen: "./images/gallery/pmg-400x400.jpeg",
-        link: "./servicios/plan-mini-gym",
+        imagen: "/images/gallery/pmg-400x400.jpeg",
+        link: "/servicios/plan-mini-gym",
         estrellas: 100
     }
 ];
