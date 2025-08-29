@@ -62,7 +62,6 @@ let planes = [
 function cargarDatosDelPlan() {
     const urlParams = new URLSearchParams(window.location.search);
     const planId = urlParams.get('plan');
-
     if (planId) {
         const plan = planes.find(p => p.id === parseInt(planId));
         if (plan) {
@@ -79,6 +78,8 @@ function cargarDatosDelPlan() {
             });
             document.getElementById('product-description').innerHTML = plan.descripcion;
         }
+    }else{
+        window.location.href = "./servicios";
     }
 }
 
