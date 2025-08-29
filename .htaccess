@@ -1,7 +1,24 @@
 RewriteEngine On
-RewriteRule ^contacto$ /contacto.html [L]
-RewriteRule ^sobre-mi$ /sobre-mi.html [L]
-RewriteRule ^servicios/plan-premium-online$ /servicios/plan-premium-online.html [L]
-RewriteRule ^servicios/plan-standard-online$ /servicios/plan-standard-online.html [L]
-RewriteRule ^servicios/plan-mini-gym$ /servicios/plan-mini-gym.html [L]
-RewriteRule ^(.+\.jpe?g)$ /$1 [L]
+Options -MultiViews
+
+# --- Página 404 personalizada ---
+ErrorDocument 404 /404.html
+
+# --- Deja pasar archivos y directorios existentes ---
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# --- Rutas amigables ---
+RewriteRule ^contacto/?$ contacto.html [L]
+RewriteRule ^sobre-mi/?$ sobre-mi.html [L]
+RewriteRule ^servicios/?$ servicios.html [L]
+
+RewriteRule ^servicios/plan-premium-online/?$  servicios/pdp.html?plan=2   [QSA,L]
+RewriteRule ^servicios/plan-standard-online/?$ servicios/pdp.html?plan=1  [QSA,L]
+RewriteRule ^servicios/plan-mini-gym/?$        servicios/pdp.html?plan=3       [QSA,L]
+
+# --- Redirección de .html -> ruta amigable ---
+# (evitamos redirigir el propio 404.html)
+RewriteCond %{REQUEST_URI} !^/404\.html$
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]

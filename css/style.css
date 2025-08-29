@@ -1071,11 +1071,9 @@ header.header-4 > .container-fluid {
 header.header-4 > .container-fluid > .row > .col-md-9 {
 	position: static;
 }
-header.header-4 .btn-wrap .top-call-btn {
+.top-call-btn {
     display: inline-block;
-    float: right;
     vertical-align: middle;
-    margin-left: 20px;
     color: #fff;
     background-color: rgb(203, 95, 151);
     height: 40px;
@@ -1086,9 +1084,10 @@ header.header-4 .btn-wrap .top-call-btn {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    padding-left: 50px
 }
-header.header-4 .btn-wrap .top-call-btn:before {
-    content: '\f4b9';
+/*.top-call-btn:before {
+    content: '\f058';
     font-family: Ionicons;
     font-size: 34px;
     font-weight: 400;
@@ -1096,8 +1095,19 @@ header.header-4 .btn-wrap .top-call-btn:before {
     opacity: .75;
     margin-right: 10px;
     float: left;
+}*/
+.top-call-btn:hover {
+    color: #fff;
+    /*color: rgb(203, 95, 151);*/
 }
-header.header-4 .btn-wrap .top-call-btn:hover:before {
+.top-call-btn i {
+    font-size: 24px;
+    margin-top: 8px;
+    display: inline-block;
+    position: absolute;
+    margin-left: -36px;
+}
+.top-call-btn:hover i {
     animation: shake .82s cubic-bezier(0.36,.07,.19,.97) both;
     transform: translate3d(0,0,0);
     backface-visibility: hidden;
@@ -3906,7 +3916,7 @@ header.header-4.scrolling-menu #logo {
 /* === 2.17. SERVICES === */
 .organik-services {
     background: #fff;
-    text-align: center;
+    /*text-align: center;*/
     padding: 40px 30px;
 	margin-bottom: 30px;
 }
@@ -3921,10 +3931,19 @@ header.header-4.scrolling-menu #logo {
     perspective: 1000px;
 }
 .organik-services .title {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
     color: #392a25;
     margin-bottom: 10px;
+}
+.organik-services .price {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.organik-services .price span {
+    font-size: 14px !important;
+    color: #999;
 }
 .organik-services .content {
     color: #5e5a54;
@@ -4604,24 +4623,9 @@ header.header-4 .mini-cart-wrap .mini-cart .mini-cart-icon {
     overflow: hidden;
     background: none;
     padding: 0;
-    font-size: 0;
     color: #fff;
     opacity: 1;
-}
-.product-item .product-action .add-to-cart > a:before {
-    content: '\f110';
-    font-size: 20px;
-    display: inline-block;
-    font-family: Ionicons;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    text-rendering: auto;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-size: 18px;
 }
 .product-item .product-action .wishlist,
 .product-item .product-action .quickview,
@@ -4642,7 +4646,6 @@ header.header-4 .mini-cart-wrap .mini-cart .mini-cart-icon {
     width: 20px;
     height: 20px;
     text-transform: uppercase;
-    font-size: 0;
     text-align: center;
     line-height: 20px;
     border: 0;
@@ -4650,29 +4653,7 @@ header.header-4 .mini-cart-wrap .mini-cart .mini-cart-icon {
     color: #fff;
     display: inline-block;
 }
-.product-item .product-action .wishlist > a:before,
-.product-item .product-action .quickview > a:before,
-.product-item .product-action .compare > a:before {
-    content: '\f387';
-    font-family: Ionicons;
-    font-size: 20px;
-    font-weight: 400;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    text-rendering: auto;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-.product-item .product-action .quickview > a:before {
-	content: '\f21f';
-}
-.product-item .product-action .compare > a:before {
-	content: '\f221';
-}
+
 .product-item .product-info .title {
     font-size: 18px;
     font-weight: 700;
@@ -5377,6 +5358,10 @@ header.header-4 .mini-cart-wrap .mini-cart .mini-cart-icon {
 	font-weight: 700;
 	text-decoration: none;
 }
+.single-product .summary .product-price ins small {
+    font-size: 16px;
+    color: #999;
+}
 .single-product form.cart {
     margin-bottom: 20px;
     padding: 30px 0 0 0;
@@ -5862,8 +5847,17 @@ table.shop-cart .actions .update-cart {
 		margin-top: 50px;
 	}
 	.organik-services .title {
-		font-size: 18px;
+		font-size: 24px;
 	}
+    .organik-services .price {
+		font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+	}
+    .organik-services .price span {
+        font-size: 14px !important;
+        color: #999;
+    }
 	.single-blog .entry-nav > .row > div {
 		margin-bottom: 15px;
 		text-align: center;
