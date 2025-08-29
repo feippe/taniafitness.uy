@@ -1,24 +1,26 @@
 RewriteEngine On
 Options -MultiViews
 
-# --- Página 404 personalizada ---
+# 404 personalizado
 ErrorDocument 404 /404.html
+
+# --- Redirección CANÓNICA: .html -> ruta amigable ---
+# Solo cuando el usuario pidió .html (no en reescrituras internas)
+RewriteCond %{THE_REQUEST} \s/([^\s?]+)\.html[\s?] [NC]
+RewriteCond %1 !^404$  [NC]   # evita 404.html
+RewriteRule ^ %1 [R=301,L]
 
 # --- Deja pasar archivos y directorios existentes ---
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# --- Rutas amigables ---
-RewriteRule ^contacto/?$ contacto.html [L]
-RewriteRule ^sobre-mi/?$ sobre-mi.html [L]
-RewriteRule ^servicios/?$ servicios.html [L]
+# --- Rutas amigables -> archivos internos ---
+RewriteRule ^contacto/?$              contacto.html                       [L]
+RewriteRule ^sobre-mi/?$              sobre-mi.html                       [L]
+RewriteRule ^servicios/?$             servicios.html                      [L]
 
-RewriteRule ^servicios/plan-premium-online/?$  servicios/pdp.html?plan=2   [QSA,L]
+RewriteRule ^servicios/plan-premium-online/?$  servicios/pdp.html?plan=2  [QSA,L]
 RewriteRule ^servicios/plan-standard-online/?$ servicios/pdp.html?plan=1  [QSA,L]
-RewriteRule ^servicios/plan-mini-gym/?$        servicios/pdp.html?plan=3       [QSA,L]
+RewriteRule ^servicios/plan-mini-gym/?$        servicios/pdp.html?plan=3  [QSA,L]
 
-# --- Redirección de .html -> ruta amigable ---
-# (evitamos redirigir el propio 404.html)
-RewriteCond %{REQUEST_URI} !^/404\.html$
-RewriteRule ^(.+)\.html$ /$1 [R=301,L]
