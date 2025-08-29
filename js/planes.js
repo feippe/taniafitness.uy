@@ -60,27 +60,41 @@ let planes = [
 
 
 function cargarDatosDelPlan() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const planId = urlParams.get('plan');
-    if (planId) {
-        const plan = planes.find(p => p.id === parseInt(planId));
-        if (plan) {
-            document.getElementById('plan-nombre').textContent = plan.nombre;
-            document.getElementById('bread-name').textContent = plan.nombre;
-            document.getElementById('nombre-plan-header').textContent = plan.nombre;
-            document.querySelector('title').textContent = plan.nombre + " - Tania Fitness";
-            document.getElementById('imgGallery').src = plan.imagen;
-            document.getElementById('imgGallery').alt = plan.nombre;
-            document.getElementById('imgZoom').href = plan.imagen;
-            document.getElementById('estrellas').style.width = plan.estrellas + "%";
-            plan.precios.forEach(precio => {
-                document.getElementById('product-price').innerHTML += `<ins>${precio}</ins> <br>`;
-            });
-            document.getElementById('product-description').innerHTML = plan.descripcion;
-        }
-    }else{
+    // Obtiene el pathname, ej: "/servicios/plan-premium-online"
+    const path = window.location.pathname;
+
+    // Extrae solo el slug (última parte después del último /)
+    const slug = path.split('/').filter(Boolean).pop(); 
+    // ej: "plan-premium-online"
+
+    // Busca el plan que tenga ese slug en su link
+    const plan = planes.find(p => p.link.endsWith(slug));
+
+    if (plan) {
+        document.getElementById('plan-nombre').textContent = plan.nombre;
+        document.getElementById('bread-name').textContent = plan.nombre;
+        document.getElementById('nombre-plan-header').textContent = plan.nombre;
+        document.title = `${plan.nombre} - Tania Fitness`;
+
+        document.getElementById('imgGallery').src = plan.imagen;
+        document.getElementById('imgGallery').alt = plan.nombre;
+        document.getElementById('imgZoom').href = plan.imagen;
+
+        document.getElementById('estrellas').style.width = plan.estrellas + "%";
+
+        // Resetea antes de llenar, para no duplicar si se recarga
+        const priceEl = document.getElementById('product-price');
+        priceEl.innerHTML = '';
+        plan.precios.forEach(precio => {
+            priceEl.innerHTML += `<ins>${precio}</ins><br>`;
+        });
+
+        document.getElementById('product-description').innerHTML = plan.descripcion;
+    } else {
+        // Si no encuentra el plan, redirige al listado
         window.location.href = "/servicios";
     }
 }
 
-cargarDatosDelPlan();
+// Ejecutar cuando el DOM está listo
+document.addEventListener("DOMContentLoaded", cargarDatosDelPlan);
