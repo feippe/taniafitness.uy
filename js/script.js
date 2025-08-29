@@ -147,29 +147,7 @@
 		
 		
 		
-		/* toggle mobile menu */
-		var openLeft = $('#open-left');
-		var site = $('.site');
-		var slideoutMenu = $('.slideout-menu');
-		openLeft.on('click',function(e){
-            site.addClass('open');
-			slideoutMenu.addClass('open');
-        });
-		site.on('click',function(e){
-            if ($(e.target).closest("#open-left").length === 0) {
-				if (site.hasClass("open")) {
-					e.preventDefault();
-				}
-				$(this).removeClass("open");
-				slideoutMenu.removeClass('open');
-			}
-        });
 		
-		var subMenuToggle = $('.sub-menu-toggle');
-		subMenuToggle.on('click',function(e){
-            $(this).parent('li').toggleClass('expand');
-			$(this).siblings('.sub-menu').slideToggle();
-        });
 		
 		/* init revolution slider */
 		if ($("#rev_slider").length > 0) {
@@ -581,7 +559,7 @@ function RevolutionInit2() {
 ===================================================================*/
 
 function loadHeaderFooter(){
-	renderWithTemplate('menuslideout',document.querySelector('#menuslideout'));
+	renderWithTemplate('menuslideout',document.querySelector('#menuslideout'), loadEventsMenu);
 	renderWithTemplate('header',document.querySelector('#topheader'), menuSelected);
 	renderWithTemplate('footer',document.querySelector('#footer'), loadBackToTop);
 }
@@ -593,6 +571,32 @@ function loadBackToTop(){
 			scrollTop: 0
 		}, 800);
 		return false;
+	});
+}
+
+function loadEventsMenu(){
+	/* toggle mobile menu */
+	var openLeft = $('#open-left');
+	var site = $('.site');
+	var slideoutMenu = $('.slideout-menu');
+	openLeft.on('click',function(e){
+		site.addClass('open');
+		slideoutMenu.addClass('open');
+	});
+	site.on('click',function(e){
+		if ($(e.target).closest("#open-left").length === 0) {
+			if (site.hasClass("open")) {
+				e.preventDefault();
+			}
+			$(this).removeClass("open");
+			slideoutMenu.removeClass('open');
+		}
+	});
+	
+	var subMenuToggle = $('.sub-menu-toggle');
+	subMenuToggle.on('click',function(e){
+		$(this).parent('li').toggleClass('expand');
+		$(this).siblings('.sub-menu').slideToggle();
 	});
 }
 
