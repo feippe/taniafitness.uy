@@ -16,11 +16,11 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
 # --- Rutas amigables -> archivos internos ---
-RewriteRule ^contacto/?$              contacto.html                       [L]
-RewriteRule ^sobre-mi/?$              sobre-mi.html                       [L]
-RewriteRule ^servicios/?$             servicios.html                      [L]
+RewriteRule ^contacto/?$              /contacto.html                       [L]
+RewriteRule ^sobre-mi/?$              /sobre-mi.html                       [L]
+RewriteRule ^servicios/?$             /servicios.html                      [L]
 
-RewriteRule ^servicios/plan-premium-online/?$  pdp.html?plan=2  [QSA,L]
-RewriteRule ^servicios/plan-standard-online/?$ pdp.html?plan=1  [QSA,L]
-RewriteRule ^servicios/plan-mini-gym/?$        pdp.html?plan=3  [QSA,L]
+RewriteRule ^servicios/plan-premium-online/?$  /pdp.html?plan=2  [QSA,L]
+RewriteRule ^servicios/plan-standard-online/?$ /pdp.html?plan=1  [QSA,L]
+RewriteRule ^servicios/plan-mini-gym/?$        /pdp.html?plan=3  [QSA,L]
 
