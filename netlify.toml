@@ -1,0 +1,41 @@
+[[redirects]]
+  from = "/contacto"
+  to   = "/contacto.html"
+  status = 200
+
+[[redirects]]
+  from = "/sobre-mi"
+  to   = "/sobre-mi.html"
+  status = 200
+
+[[redirects]]
+  from = "/servicios"
+  to   = "/servicios.html"
+  status = 200
+
+[[redirects]]
+  from = "/servicios/plan-premium-online"
+  to   = "/pdp.html?plan=2"
+  status = 200
+
+[[redirects]]
+  from = "/servicios/plan-standard-online"
+  to   = "/pdp.html?plan=1"
+  status = 200
+
+[[redirects]]
+  from = "/servicios/plan-mini-gym"
+  to   = "/pdp.html?plan=3"
+  status = 200
+
+# opcional splat
+# [[redirects]]
+#   from = "/servicios/plan-*"
+#   to   = "/pdp.html?plan=:splat"
+#   status = 200
+
+# opcional 404 catch-all (Netlify ya usa /404.html si existe)
+# [[redirects]]
+#   from = "/*"
+#   to   = "/404.html"
+#   status = 404
