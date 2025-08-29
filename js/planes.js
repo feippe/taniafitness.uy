@@ -78,12 +78,6 @@ function cargarDatosDelPlan() {
                 document.getElementById('product-price').innerHTML += `<ins>${precio}</ins> <br>`;
             });
             document.getElementById('product-description').innerHTML = plan.descripcion;
-            
-            document.getElementById('plan-precio').innerHTML = `<small>desde</small> $${plan.precio}<small>/mes</small>`;
-            
-            
-            document.getElementById('plan-imagen').alt = plan.nombre;
-            document.getElementById('plan-link').href = plan.link;
         }
     }
 }
